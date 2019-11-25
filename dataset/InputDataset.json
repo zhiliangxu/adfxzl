@@ -1,5 +1,5 @@
 {
-	"name": "Binary1",
+	"name": "InputDataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
