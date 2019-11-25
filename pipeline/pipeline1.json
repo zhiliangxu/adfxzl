@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyPipeline",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -19,7 +19,7 @@
 						"type": "BinarySource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true
+							"recursive": false
 						}
 					},
 					"sink": {
@@ -28,112 +28,7 @@
 							"type": "AzureBlobStorageWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "ServiceId",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ServiceId",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "SubscriptionId",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SubscriptionId",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "SubscriptionName",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SubscriptionName",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "SiteName",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SiteName",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Owner",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Owner",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "IsFirstParty",
-									"type": "String"
-								},
-								"sink": {
-									"name": "IsFirstParty",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "MinimumTlsVersion",
-									"type": "String"
-								},
-								"sink": {
-									"name": "MinimumTlsVersion",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Region",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Region",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Hostname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Hostname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "TimeStamp",
-									"type": "String"
-								},
-								"sink": {
-									"name": "TimeStamp",
-									"type": "String"
-								}
-							}
-						]
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
