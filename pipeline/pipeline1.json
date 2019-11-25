@@ -23,14 +23,9 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "BinarySink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -43,8 +38,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 1
+									"name": "ServiceId",
+									"type": "String"
 								}
 							},
 							{
@@ -53,8 +48,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 2
+									"name": "SubscriptionId",
+									"type": "String"
 								}
 							},
 							{
@@ -63,8 +58,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 3
+									"name": "SubscriptionName",
+									"type": "String"
 								}
 							},
 							{
@@ -73,8 +68,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 4
+									"name": "SiteName",
+									"type": "String"
 								}
 							},
 							{
@@ -83,8 +78,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 5
+									"name": "Owner",
+									"type": "String"
 								}
 							},
 							{
@@ -93,8 +88,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 6
+									"name": "IsFirstParty",
+									"type": "String"
 								}
 							},
 							{
@@ -103,8 +98,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 7
+									"name": "MinimumTlsVersion",
+									"type": "String"
 								}
 							},
 							{
@@ -113,8 +108,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 8
+									"name": "Region",
+									"type": "String"
 								}
 							},
 							{
@@ -123,8 +118,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 9
+									"name": "Hostname",
+									"type": "String"
 								}
 							},
 							{
@@ -133,8 +128,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"type": "String",
-									"ordinal": 10
+									"name": "TimeStamp",
+									"type": "String"
 								}
 							}
 						]
@@ -148,7 +143,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "OutputDataset2",
+						"referenceName": "OutputDataset",
 						"type": "DatasetReference"
 					}
 				]
