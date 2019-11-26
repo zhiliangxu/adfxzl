@@ -7,7 +7,10 @@
 		},
 		"annotations": [],
 		"type": "AzureDataExplorerTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"table": "Employee"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
