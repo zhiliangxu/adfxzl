@@ -1,0 +1,14 @@
+{
+	"name": "OutputEmployee",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TryCosmosDb1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"typeProperties": {
+			"collectionName": "OutputEmployee"
+		}
+	}
+}
