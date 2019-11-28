@@ -46,9 +46,14 @@
 						"preferredRegions": []
 					},
 					"sink": {
-						"type": "BinarySink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false
@@ -61,7 +66,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "OutputDataset",
+						"referenceName": "OutputDelimitedText",
 						"type": "DatasetReference"
 					}
 				]
