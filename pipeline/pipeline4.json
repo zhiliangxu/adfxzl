@@ -118,7 +118,7 @@
 				}
 			},
 			{
-				"name": "Set Files variable",
+				"name": "Set Files variable 2",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
