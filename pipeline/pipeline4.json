@@ -55,8 +55,27 @@
 							"typeProperties": {
 								"variableName": "Files",
 								"value": [
-									"@union(variables('Files')",
-									" @item().name)"
+									"@union(variables('TempFiles'",
+									" item().name))"
+								]
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Add file name to variable Files",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "TempFiles",
+								"value": [
+									"@variables('Files')"
 								]
 							}
 						}
@@ -66,6 +85,9 @@
 		],
 		"variables": {
 			"Files": {
+				"type": "Array"
+			},
+			"TempFiles": {
 				"type": "Array"
 			}
 		},
