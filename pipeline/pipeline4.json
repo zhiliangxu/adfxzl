@@ -56,7 +56,7 @@
 								"variableName": "Files",
 								"value": [
 									"@union(variables('Files')",
-									" item().name)"
+									" @item().name)"
 								]
 							}
 						}
