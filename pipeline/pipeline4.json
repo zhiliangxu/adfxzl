@@ -54,10 +54,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "Files",
-								"value": [
-									"@union(variables('TempFiles'",
-									" item().name))"
-								]
+								"value": {
+									"value": "@union(variables('TempFiles'), item().name)",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -74,9 +74,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "TempFiles",
-								"value": [
-									"@variables('Files')"
-								]
+								"value": {
+									"value": "@variables('Files')",
+									"type": "Expression"
+								}
 							}
 						}
 					]
