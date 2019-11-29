@@ -29,7 +29,7 @@
 					"name": "Aggregate1"
 				}
 			],
-			"script": "\n\nsource(output(\n\t\tFirstName as string,\n\t\tLastName as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: true,\n\tformat: 'document') ~> source1\nsource1 filter(like(LastName, '%ng')) ~> Filter1\nFilter1 aggregate(groupBy(LastName),\n\tLastName = count()) ~> Aggregate1\nAggregate1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tpartitionBy('roundRobin', 2)) ~> sink1"
+			"script": "\n\nsource(output(\n\t\tFirstName as string,\n\t\tLastName as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: true,\n\tformat: 'document') ~> source1\nsource1 filter(like(LastName, '%ng')) ~> Filter1\nFilter1 aggregate(LastName = count()) ~> Aggregate1\nAggregate1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tpartitionBy('roundRobin', 2)) ~> sink1"
 		}
 	}
 }
