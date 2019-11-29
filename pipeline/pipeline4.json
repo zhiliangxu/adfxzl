@@ -55,13 +55,13 @@
 							"typeProperties": {
 								"variableName": "Files",
 								"value": {
-									"value": "@union(variables('TempFiles'), item().name)",
+									"value": "@union(variables('TempFiles'), array(item().name))",
 									"type": "Expression"
 								}
 							}
 						},
 						{
-							"name": "Set variable1",
+							"name": "Set TempFiles",
 							"type": "SetVariable",
 							"dependsOn": [
 								{
