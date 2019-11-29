@@ -29,7 +29,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "For each file",
 				"type": "ForEach",
 				"dependsOn": [
 					{
