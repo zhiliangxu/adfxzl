@@ -59,52 +59,12 @@
 								},
 								"ifTrueActivities": [
 									{
-										"name": "Set Files variable",
-										"type": "SetVariable",
+										"name": "Append TempFiles variable",
+										"type": "AppendVariable",
 										"dependsOn": [],
 										"userProperties": [],
 										"typeProperties": {
-											"variableName": "Files",
-											"value": {
-												"value": "@union(variables('TempFiles'), array(item().name))",
-												"type": "Expression"
-											}
-										}
-									},
-									{
-										"name": "Set TempFiles variable",
-										"type": "SetVariable",
-										"dependsOn": [
-											{
-												"activity": "Set Files variable",
-												"dependencyConditions": [
-													"Succeeded"
-												]
-											}
-										],
-										"userProperties": [],
-										"typeProperties": {
 											"variableName": "TempFiles",
-											"value": {
-												"value": "@variables('Files')",
-												"type": "Expression"
-											}
-										}
-									},
-									{
-										"name": "Append FilesArray variable",
-										"type": "AppendVariable",
-										"dependsOn": [
-											{
-												"activity": "Set TempFiles variable",
-												"dependencyConditions": [
-													"Succeeded"
-												]
-											}
-										],
-										"userProperties": [],
-										"typeProperties": {
-											"variableName": "FilesArray",
 											"value": {
 												"value": "@item().name",
 												"type": "Expression"
@@ -118,7 +78,7 @@
 				}
 			},
 			{
-				"name": "Set Files variable 2",
+				"name": "Set Files variable",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -132,7 +92,7 @@
 				"typeProperties": {
 					"variableName": "Files",
 					"value": {
-						"value": "@variables('FilesArray')",
+						"value": "@variables('TempFiles')",
 						"type": "Expression"
 					}
 				}
@@ -144,10 +104,6 @@
 			},
 			"TempFiles": {
 				"type": "Array"
-			},
-			"FilesArray": {
-				"type": "Array",
-				"defaultValue": []
 			}
 		},
 		"annotations": []
