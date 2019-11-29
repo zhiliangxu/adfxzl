@@ -48,7 +48,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Set variable1",
+							"name": "Add file name to variable Files",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"userProperties": [],
