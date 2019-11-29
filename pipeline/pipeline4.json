@@ -116,6 +116,26 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Set Files variable",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "For each file",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Files",
+					"value": {
+						"value": "@variables('FilesArray')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
