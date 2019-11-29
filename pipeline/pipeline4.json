@@ -90,6 +90,26 @@
 												"type": "Expression"
 											}
 										}
+									},
+									{
+										"name": "Append FilesArray variable",
+										"type": "AppendVariable",
+										"dependsOn": [
+											{
+												"activity": "Set TempFiles variable",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "FilesArray",
+											"value": {
+												"value": "@item().name",
+												"type": "Expression"
+											}
+										}
 									}
 								]
 							}
@@ -104,6 +124,10 @@
 			},
 			"TempFiles": {
 				"type": "Array"
+			},
+			"FilesArray": {
+				"type": "Array",
+				"defaultValue": []
 			}
 		},
 		"annotations": []
