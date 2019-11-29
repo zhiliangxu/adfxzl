@@ -48,13 +48,16 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Append variable1",
-							"type": "AppendVariable",
+							"name": "Set variable1",
+							"type": "SetVariable",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "Files",
-								"value": "@item().name"
+								"value": [
+									"@union(variables('Files')",
+									" item().name)"
+								]
 							}
 						}
 					]
