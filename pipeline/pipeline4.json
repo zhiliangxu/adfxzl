@@ -48,36 +48,50 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Add file name to variable Files",
-							"type": "SetVariable",
+							"name": "If file is CSV",
+							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "Files",
-								"value": {
-									"value": "@union(variables('TempFiles'), array(item().name))",
+								"expression": {
+									"value": "@item().name.endswith('csv')",
 									"type": "Expression"
-								}
-							}
-						},
-						{
-							"name": "Set TempFiles",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "Add file name to variable Files",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "TempFiles",
-								"value": {
-									"value": "@variables('Files')",
-									"type": "Expression"
-								}
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Set Files variable",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Files",
+											"value": {
+												"value": "@union(variables('TempFiles'), array(item().name))",
+												"type": "Expression"
+											}
+										}
+									},
+									{
+										"name": "Set TempFiles variable",
+										"type": "SetVariable",
+										"dependsOn": [
+											{
+												"activity": "Set Files variable",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "TempFiles",
+											"value": {
+												"value": "@variables('Files')",
+												"type": "Expression"
+											}
+										}
+									}
+								]
 							}
 						}
 					]
